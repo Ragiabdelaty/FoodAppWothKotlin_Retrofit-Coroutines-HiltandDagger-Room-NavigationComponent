@@ -16,7 +16,12 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    android {
 
+        buildFeatures {
+            viewBinding = true
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -49,7 +54,8 @@ dependencies {
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
 
-//View Model
+
+    //View Model
     val lifecycle_version = "2.8.4"
     val arch_version = "2.2.0"
 
@@ -67,6 +73,10 @@ dependencies {
     implementation("androidx.navigation:navigation-ui:$nav_version")
 
     //HiltandDagger
+
+
+    implementation("com.google.dagger:hilt-android:2.44")
+    implementation ("com.google.dagger:hilt-android-compiler:2.44")
 
 
     implementation(libs.androidx.core.ktx)
